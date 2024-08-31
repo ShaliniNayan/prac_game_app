@@ -13,6 +13,8 @@ const generateDeck = () => {
     'verna',
     'wagonr',
   ];
+
+  const deck = [...memoryCards, ...memoryCards];
 };
 
 export default function MemoryGame() {
