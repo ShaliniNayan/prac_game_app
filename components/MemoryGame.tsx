@@ -15,6 +15,7 @@ const generateDeck = () => {
   ];
 
   const deck = [...memoryCards, ...memoryCards];
+  return deck.sort(() => Math.random() - 0.5);
 };
 
 export default function MemoryGame() {
