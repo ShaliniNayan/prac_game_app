@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const generateDeck = () => {
   const memoryCards = [
@@ -19,5 +19,6 @@ const generateDeck = () => {
 };
 
 export default function MemoryGame() {
+  const [cards, setCards] = useState<string[]>(generateDeck());
   return <div></div>;
 }
