@@ -22,7 +22,9 @@ export default function MemoryGame() {
   const [cards, setCards] = useState<string[]>(generateDeck());
   return (
     <div>
-      <div className='grid grid-cols-4'>{}</div>
+      <div className='grid grid-cols-4'>
+        {cards.map[(card: any) => <div></div>]}
+      </div>
     </div>
   );
 }
