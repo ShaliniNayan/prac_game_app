@@ -21,6 +21,8 @@ const generateDeck = () => {
 
 export default function MemoryGame() {
   const [cards, setCards] = useState<string[]>(generateDeck());
+  const [flipped, setFlipped] = useState<number[]>([]);
+
   return (
     <div>
       <div className='grid grid-cols-4 gap-5'>
