@@ -1,4 +1,4 @@
-import MemoryGame from '@/components/MemoryGame';
+import MemoryGame from '../components/MemoryGame';
 import React from 'react';
 
 export default function Home() {
