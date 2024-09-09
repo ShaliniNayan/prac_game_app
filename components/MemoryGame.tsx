@@ -9,8 +9,8 @@ const generateDeck = () => {
     'fortuner',
     'innova',
     'hector',
-    'scropio',
-    'telsa',
+    'scorpio',
+    'tesla',
     'verna',
     'wagonr',
   ];
@@ -34,12 +34,19 @@ export default function MemoryGame() {
           <div
             key={index}
             onClick={() => handleClick(index)}
-            className='w-28 h-28 transform cursor-pointer'
+            className='w-28 h-28 transform cursor-pointer relative'
           >
             {flipped.includes(index) ? (
-              <Image src={`/images/${card}.webp`} fill alt='Memory Card' />
+              <Image 
+                src={`/images/${card}.webp`} 
+                alt='Memory Card' 
+                fill 
+                style={{ objectFit: 'cover' }} 
+              />
             ) : (
-              '?'
+              <div className="flex items-center justify-center w-full h-full bg-gray-200">
+                ?
+              </div>
             )}
           </div>
         ))}
