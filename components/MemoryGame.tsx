@@ -37,7 +37,7 @@ export default function MemoryGame() {
             className='w-28 h-28 transform cursor-pointer'
           >
             {flipped.includes(index) ? (
-              <Image src={`/images/${card}.webp`} fill alt='Memory Card' />
+              <img src={`/memoryCards/${card}.webp`} alt='Memory Card' />
             ) : (
               '?'
             )}
