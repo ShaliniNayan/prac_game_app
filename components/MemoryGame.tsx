@@ -34,19 +34,12 @@ export default function MemoryGame() {
           <div
             key={index}
             onClick={() => handleClick(index)}
-            className='w-28 h-28 transform cursor-pointer relative'
+            className='w-28 h-28 transform cursor-pointer'
           >
             {flipped.includes(index) ? (
-              <Image 
-                src={`/images/${card}.webp`} 
-                alt='Memory Card' 
-                fill 
-                style={{ objectFit: 'cover' }} 
-              />
+              <Image src={`/images/${card}.webp`} fill alt='Memory Card' />
             ) : (
-              <div className="flex items-center justify-center w-full h-full bg-gray-200">
-                ?
-              </div>
+              '?'
             )}
           </div>
         ))}
