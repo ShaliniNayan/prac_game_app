@@ -34,7 +34,7 @@ export default function MemoryGame() {
           <div
             key={index}
             onClick={() => handleClick(index)}
-            className='w-28 h-28 transform cursor-pointer'
+            className='flex justify-center items-center text-4xl font-bold text-black w-28 bg-slate-200 h-28 transform cursor-pointer'
           >
             {flipped.includes(index) ? (
               <img src={`/memoryCards/${card}.webp`} alt='Memory Card' />
