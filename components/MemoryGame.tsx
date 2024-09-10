@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const generateDeck = () => {
@@ -22,10 +22,33 @@ const generateDeck = () => {
 export default function MemoryGame() {
   const [cards, setCards] = useState<string[]>(generateDeck());
   const [flipped, setFlipped] = useState<number[]>([]);
+  const [solved, setSolved] = useState<number[]>([]);
+
+  useEffect(() => {
+  if (flipped.length === 2) {
+    const checkForMatch = () => {
+      const [first, second] = flipped;
+
+      if (cards[first] === cards[second]) {
+        setSolved([...solved, ...flipped]);
+      }
+      setFlipped([]);
+    };
+    
+    if(flipped.length === 2) {
+      setTimeout(() => {
+        checkForMatch();
+      }, 1000);
+    }
+    
+  }
+}, [cards, flipped, solved]);
 
   const handleClick = (index: number) => {
+  if (!flipped.includes(index) && flipped.length < 2) {
     setFlipped([...flipped, index]);
-  };
+  }
+};
 
   return (
     <div>
