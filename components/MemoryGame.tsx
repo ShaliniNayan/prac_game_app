@@ -53,10 +53,10 @@ export default function MemoryGame() {
 const gameOver = solved.length === cards.length;
 
   return (
-    <div>
+    <div className='text-center'>
       <h1>Memory Game</h1>
-      {gameOver && <h2>You WON! Congrats!</h2>}
-      <div className='grid grid-cols-4 gap-5'>
+      {gameOver && <h2 className='p-5'>You WON! Congrats!</h2>}
+      <div className='grid grid-cols-4 gap-5 mt-5'>
         {cards.map((card, index) => (
           <div
             key={index}
