@@ -52,6 +52,12 @@ export default function MemoryGame() {
 
 const gameOver = solved.length === cards.length;
 
+const resetGame = () => {
+  setCards(generateDeck());
+  setFlipped([]);
+  setSolved([]);
+}
+
   return (
     <div className='text-center'>
       <h1>Memory Game</h1>
@@ -64,13 +70,14 @@ const gameOver = solved.length === cards.length;
             className={`flex justify-center items-center text-4xl font-bold text-black w-28 bg-slate-200 h-28 transform cursor-pointer transition-transform duration-300 ${flipped.includes(index) || solved.includes(index) ? 'rotate-180' : ''}`}
           >
             {flipped.includes(index) || solved.includes(index) ? (
-              <Image className='rotate-180' src={`/memoryCards/${card}.webp`} alt='Memory Card' />
+              <img className='rotate-180' src={`/memoryCards/${card}.webp`} alt='Memory Card' />
             ) : (
               '?'
             )}
           </div>
         ))}
       </div>
+      <button className='flex p-5 bg-slate-500 rounded-md mt-5' onClick={resetGame}>Restart</button>
     </div>
   );
 }
